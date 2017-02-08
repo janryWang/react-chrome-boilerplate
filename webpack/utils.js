@@ -3,6 +3,7 @@ const Path = require('path')
 const glob = require('glob')
 const ejs = require('ejs')
 const execa = require('execa')
+const webStore = require('chrome-webstore-upload')
 
 
 const src = (path) => {
@@ -72,10 +73,28 @@ const startServer = (port)=>{
     },1000)
 }
 
+const publish = (name,options)=>{
+    const instance = webStore(options)
+    const zipFilePath = './' + name + '.zip'
+    instance.fetchToken().then((token)=>{
+        fs.stat(zipFilePath, (err, stat) => {
+            if(!err && stat.isFile()){
+                const zipFile = fs.createReadStream(zipFilePath)
+                instance.uploadExisting(zipFile,token)
+                .then(()=>instance.publish('default',token))
+                .catch(e=>console.error(e))
+            } else {
+                console.error(err)
+            }
+        })
+    })
+}
+
 module.exports = {
     src,
     generateAlias,
     compileTpls,
     package,
-    startServer
+    startServer,
+    publish
 }
