@@ -9,10 +9,14 @@
     "build": "NODE_ENV=production rm -rf crx && webpack --config webpack/webpack.config.prod.js && node webpack/package",
     "publish": "npm run build && node webpack/publish"
   },
+
+
   "extensionId": "This is your extension id",
   "clientId": "This is your client id",
   "clientSecret": "This is your client secret",
   "refreshToken": "This is your refresh token",
+
+  
   "devDependencies": {
     "@kadira/storybook": "^2.35.3",
     "babel-core": "^6.14.0",

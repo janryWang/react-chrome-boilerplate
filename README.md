@@ -17,7 +17,31 @@ npm start //Start server with storybook
 
 npm run build //Build your code and package your extension.
 
+npm run commit //commit your code.
+
 npm run publish //Build your code and push your code.
+
+
+```
+
+# WebStore Settings
+
+package.json
+
+```
+
+{
+
+    .....
+
+  "extensionId": "This is your extension id",
+  "clientId": "This is your client id",
+  "clientSecret": "This is your client secret",
+  "refreshToken": "This is your refresh token",
+
+    ....
+
+}
 
 
 ```
