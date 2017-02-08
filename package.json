@@ -1,0 +1,47 @@
+{
+  "name": "react-chrome-boilerplate",
+  "version": "1.0.0",
+  "description": "This is React chrome extension boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "start": "node webpack/server",
+    "build": "NODE_ENV=production rm -rf crx && webpack --config webpack/webpack.config.prod.js && node webpack/package",
+    "pub": "npm run build && npm run publish"
+  },
+  "devDependencies": {
+    "@kadira/storybook": "^2.35.3",
+    "babel-core": "^6.14.0",
+    "babel-jest": "*",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-lodash": "^3.2.10",
+    "babel-polyfill": "*",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "ejs": "^2.5.5",
+    "execa": "^0.6.0",
+    "extract-text-webpack-plugin": "^2.0.0-rc.3",
+    "file-loader": "^0.8.5",
+    "fs-extra": "^2.0.0",
+    "glob": "^7.1.1",
+    "html-loader": "^0.4.3",
+    "img-loader": "^1.3.1",
+    "less": "^2.7.2",
+    "less-loader": "^2.2.3",
+    "lodash": "^4.13.1",
+    "rucksack-css": "^0.9.1",
+    "string-loader": "0.0.1",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^2.2.1",
+    "webpack-merge": "^2.6.1"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "material-ui": "^0.16.7",
+    "mfetch": "^0.1.10",
+    "pubsub-js": "^1.5.4",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  }
+}

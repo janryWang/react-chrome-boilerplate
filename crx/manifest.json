@@ -1,0 +1,40 @@
+{
+  "manifest_version": 2,
+  "name":"react-chrome-boilerplate",
+  "description": "This is React chrome extension boilerplate",
+  "version":"1.0.0",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "css": [
+        "content.style.css"
+      ],
+      "js": [
+        "content.bundle.js"
+      ],
+      "match_about_blank":true
+    }
+  ],
+  "background": {
+    "scripts": [
+      "background.bundle.js"
+    ],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": "logo@48x48.png",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "logo@16x16.png",
+    "48": "logo@48x48.png",
+    "128": "logo@128x128.png"
+  },
+  "permissions": [
+    "storage",
+    "tabs",
+    "notifications"
+  ]
+}
