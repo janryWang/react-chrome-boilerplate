@@ -24,6 +24,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "chrome-webstore-upload": "^0.2.1",
     "commitizen": "^2.9.5",
+    "cz-conventional-changelog": "^1.2.0",
     "ejs": "^2.5.5",
     "execa": "^0.6.0",
     "extract-text-webpack-plugin": "^2.0.0-rc.3",
@@ -40,6 +41,11 @@
     "url-loader": "^0.5.7",
     "webpack": "^2.2.1",
     "webpack-merge": "^2.6.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
   },
   "dependencies": {
     "lodash": "^4.13.1",
