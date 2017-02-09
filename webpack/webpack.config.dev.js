@@ -1,6 +1,8 @@
 const webpack = require('webpack')
+const base = require('./webpack.config.base')
+const pkg = require('../package.json')
 
-module.exports = {
+const config = Object.assign(base,{
 
     module:{
         loaders: [
@@ -39,8 +41,9 @@ module.exports = {
     plugins: [
         new webpack.DefinePlugin({
             'process.env': {
-                NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development')
-            }
+                NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
+                EXTENSION_ID:JSON.stringify(pkg.extensionId)
+            } 
         }),
         new webpack.LoaderOptionsPlugin({
             postcss: function () {
@@ -53,4 +56,6 @@ module.exports = {
         })
     ]
 
-}
+})
+
+module.exports = config

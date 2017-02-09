@@ -12,7 +12,7 @@ const utils = require('./utils')
 module.exports = {
 
     resolve: {
-        extensions: ['.js', '.jsx'],
+        //extensions: ['.js', '.jsx'],
         alias: utils.generateAlias('src')
     },
 

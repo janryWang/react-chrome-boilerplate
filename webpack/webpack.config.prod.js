@@ -28,7 +28,8 @@ module.exports = merge.smart(baseConfig,{
     plugins: [
         new webpack.DefinePlugin({
             'process.env': {
-                NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'production')
+                NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'production'),
+                EXTENSION_ID:JSON.stringify(pkg.extensionId)
             }
         }),
         new ExtractTextPlugin('[name].style.css'),

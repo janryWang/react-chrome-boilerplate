@@ -3,7 +3,7 @@ const Path = require('path')
 const glob = require('glob')
 const ejs = require('ejs')
 const execa = require('execa')
-const webStore = require('chrome-webstore-upload')
+const webStore = require('./webstore')
 
 
 const src = (path) => {
@@ -11,12 +11,13 @@ const src = (path) => {
 }
 
 const generateAlias = (path) => {
+    path = Path.resolve(process.cwd(),path)
     const files = fs.readdirSync(path)
     return files.reduce((buf, filename) => {
         const file_path = Path.join(path, filename)
         const stats = fs.lstatSync(file_path)
         if (stats && stats.isDirectory()) {
-            buf[filename] = file_path
+            buf[filename] = Path.resolve('../',file_path)
         }
         return buf
     }, {})
