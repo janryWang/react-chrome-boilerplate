@@ -1,5 +1,7 @@
 # React chrome extension boilerplate
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/janryWang/react-chrome-boilerplate.svg)](https://greenkeeper.io/)
+
 > Improve your development efficiency to create chrome extension.
 
 # Install
