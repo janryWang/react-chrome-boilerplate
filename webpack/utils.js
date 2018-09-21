@@ -50,7 +50,7 @@ const compileTpls = (pattern, dist, data) => {
 const package = (name) => {
     name = name || 'crx'
     fs.stat('./' + name + '.pem', (err, stat) => {
-        const cmd = '/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --pack-extension=./' + name
+        let cmd = '/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --pack-extension=./' + name
 
         if (!err || stat && stat.isFile()) {
             cmd += '  --pack-extension-key=./' + name + '.pem'
